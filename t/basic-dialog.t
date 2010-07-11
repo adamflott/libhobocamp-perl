@@ -7,10 +7,6 @@ use Hobocamp;
 use Hobocamp::Window;
 use Hobocamp::Dialog;
 
-my $win = Hobocamp::Window->new(
-    'scale' => 1,
-    'title' => 'test');
-
-$win->add(Hobocamp::Dialog->new('text' => 'test2'));
+my $win = Hobocamp::Window->new->add(Hobocamp::Dialog->new('text' => 'Hello World!'));
 
 Hobocamp->run;

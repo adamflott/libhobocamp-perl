@@ -10,6 +10,9 @@ has 'scale' => (is => 'rw', 'isa' => 'Bool');
 has 'max_x' => (is => 'rw', 'isa' => 'Int');
 has 'max_y' => (is => 'rw', 'isa' => 'Int');
 
+has 'background_color' => (is => 'rw', 'isa' => 'Int', default => Curses::COLOR_BLUE);
+has 'foreground_color' => (is => 'rw', 'isa' => 'Int', default => Curses::COLOR_BLACK);
+
 sub BUILD {
     my ($self) = @_;
 
@@ -21,6 +24,16 @@ sub BUILD {
 
     # don't echo back characters
     Curses::noecho();
+
+    if (Curses::has_colors()) {
+        Curses::start_color();
+    }
+
+    $self->calc_max();
+}
+
+sub calc_max {
+    my ($self) = @_;
 
     my ($x, $y);
     Curses::getmaxyx($y, $x);

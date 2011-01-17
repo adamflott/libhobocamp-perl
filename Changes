@@ -1,0 +1,6 @@
+Revision history for Perl extension Hobocamp.
+
+0.01  Mon Jan 10 10:55:34 2011
+	- original version; created by h2xs 1.23 with options
+		-b 5.12.2 -d /usr/include/dialog.h -n Hobocamp
+

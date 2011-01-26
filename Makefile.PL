@@ -24,7 +24,13 @@ WriteMakefile(
     NAME          => 'Hobocamp::Dialog',
     VERSION_FROM  => 'lib/Hobocamp.pm',
     ABSTRACT_FROM => 'lib/Hobocamp.pm',
-    PREREQ_PM     => {},
+    BUILD_REQUIRES => {
+        'ExtUtils::CChecker' => 0,
+    },
+    PREREQ_PM     => {
+        'Sub::Exporter' => 0,
+        'Moose' => 0
+    },
     ABSTRACT_FROM => 'lib/Hobocamp.pm',
     AUTHOR        => 'Adam Flott <adam@npjh.com>',
 

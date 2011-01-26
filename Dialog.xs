@@ -255,8 +255,6 @@ void
 _dialog_result()
     PROTOTYPE:
     PPCODE:
-        fprintf(stderr, "\nresult: %s\n", dialog_vars.input_result);
-        fflush(stderr);
         mXPUSHs(newSVpv(dialog_vars.input_result, 0));
         dlg_clr_result();
 

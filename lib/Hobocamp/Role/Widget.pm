@@ -11,6 +11,9 @@ requires 'run';
 
 use Hobocamp::Dialog;
 
+# core
+use Scalar::Util qw();
+
 has 'title' => (
     'is'      => 'ro',
     'isa'     => 'Str',
@@ -40,6 +43,12 @@ has 'value' => (
     'isa' => 'Any',
 );
 
+has 'auto_scale' => (
+    'is'      => 'rw',
+    'isa'     => 'Bool',
+    'default' => 1
+);
+
 sub hide {
     return Hobocamp::Dialog::dlg_clear();
 }
@@ -53,6 +62,18 @@ sub _get_user_input_result {
 
     return Hobocamp::Dialog::_dialog_result();
 }
+
+before 'run' => sub {
+    my ($self) = @_;
+
+    return unless ($self->auto_scale);
+
+    given (Scalar::Util::blessed($self)) {
+        when ('Hobocamp::Menu') {
+            $self->menu_height(scalar(@{$self->items}));
+        }
+    }
+};
 
 no Moose::Role;
 

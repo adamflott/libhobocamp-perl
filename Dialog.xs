@@ -86,6 +86,19 @@ dialog_version()
 void
 dlg_clear()
 
+void
+_set_ascii_lines_state(int state = 1)
+     PROTOTYPE: $
+     CODE:
+         if (state) {
+             dialog_vars.ascii_lines = TRUE;
+             dialog_vars.no_lines = FALSE;
+         }
+         else {
+             dialog_vars.ascii_lines = FALSE;
+             dialog_vars.no_lines = TRUE;
+        }
+
 # -------- widgets --------
 
 int

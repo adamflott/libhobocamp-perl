@@ -20,6 +20,18 @@ has 'backtitle' => (
     }
 );
 
+has 'ascii_lines' => (
+    'is'      => 'rw',
+    'isa'     => 'Bool',
+    'default' => 0,
+);
+
+before 'run' => sub {
+    my ($self) = @_;
+
+    Hobocamp::Dialog::_set_ascii_lines_state($self->ascii_lines);
+};
+
 sub redraw {
     if (shift->backtitle) {
         Hobocamp::Dialog::dlg_put_backtitle();

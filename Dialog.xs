@@ -130,7 +130,7 @@ dialog_checklist(title, prompt, height, width, list_height = 1, items_list, chec
             listitems[i].text = SvPV_nolen(_get_hash_key_sv_from_array(items_list, i, "text"));
 
             if (dialog_vars.item_help) {
-                listitems[i].help = SvPV_nolen(_get_hash_key_sv_from_array(items_list, i, "help"));                
+                listitems[i].help = SvPV_nolen(_get_hash_key_sv_from_array(items_list, i, "help"));
             }
             else {
                 listitems[i].help = dlg_strempty();
@@ -152,14 +152,14 @@ dialog_checklist(title, prompt, height, width, list_height = 1, items_list, chec
                                            NULL,
                                            checklist_or_radio_flag,
                                            &current_item);
-                                
+
 
         dlg_free_columns(&listitems[0].text, sizeof(DIALOG_LISTITEM), items_amount);
         free(listitems);
 
         if (G_ARRAY) {
             mXPUSHi(dialog_return_code);
-            for (i = 0; i < items_amount; i++) {           
+            for (i = 0; i < items_amount; i++) {
                 if (listitems[i].state) {
                     mXPUSHi(i);
                 }
@@ -211,7 +211,7 @@ dialog_menu(title, prompt, height, width, menu_height = 1, items_menu)
             listitems[i].text = SvPV_nolen(_get_hash_key_sv_from_array(items_menu, i, "text"));
 
             if (dialog_vars.item_help) {
-                listitems[i].help = SvPV_nolen(_get_hash_key_sv_from_array(items_menu, i, "help"));                
+                listitems[i].help = SvPV_nolen(_get_hash_key_sv_from_array(items_menu, i, "help"));
             }
             else {
                 listitems[i].help = dlg_strempty();

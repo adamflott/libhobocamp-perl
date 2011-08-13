@@ -1,6 +1,6 @@
 package Hobocamp::Role::Widget;
 
-use v5.12.2;
+use v5.10;
 use warnings;
 
 # ABSTRACT: A role for all widgets

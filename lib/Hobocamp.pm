@@ -1,6 +1,6 @@
 package Hobocamp;
 
-use v5.12.2;
+use v5.10;
 use warnings;
 
 # ABSTRACT: Moose-based interface to dialog (simple text based GUI)

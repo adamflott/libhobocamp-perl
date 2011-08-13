@@ -1,6 +1,6 @@
 package Hobocamp::Menu;
 
-use v5.12.2;
+use v5.10;
 use warnings;
 
 # ABSTRACT: select 1 item from a list

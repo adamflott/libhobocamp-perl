@@ -1,6 +1,6 @@
 package Hobocamp::TextBox;
 
-use v5.12.2;
+use v5.10;
 use warnings;
 
 # ABSTRACT: Widget to display and edit the contents of a file

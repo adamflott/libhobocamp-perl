@@ -1,6 +1,6 @@
 package Hobocamp::Dialog;
 
-use v5.12.2;
+use v5.10;
 use warnings;
 
 # ABSTRACT: Perl access to L<dialog(1)>s widget set

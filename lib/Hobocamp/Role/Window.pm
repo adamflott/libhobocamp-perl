@@ -1,6 +1,6 @@
 package Hobocamp::Role::Window;
 
-use v5.12.2;
+use v5.10;
 use warnings;
 
 # ABSTRACT: A role for adjusting windows (back title, ASCII lines, etc)
